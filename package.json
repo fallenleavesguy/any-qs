@@ -1,0 +1,26 @@
+{
+  "name": "any-qs",
+  "version": "1.0.0",
+  "description": "parse any query parameters from url",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc --reporter text --reporter html mocha",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com:yeluoqiuzhi/any-qs.git"
+  },
+  "author": "yeluoqiuzhi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yeluoqiuzhi/any-qs/issues"
+  },
+  "homepage": "https://github.com/yeluoqiuzhi/any-qs#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coveralls": "^2.13.1",
+    "mocha": "^3.4.1",
+    "nyc": "^10.3.2"
+  }
+}

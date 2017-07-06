@@ -8,7 +8,7 @@ parse any query parameters from url
 ## install
 
 ```shell
-npm i any-qs
+npm i -S any-qs
 ```
 
 ## usage

@@ -46,8 +46,6 @@ console.log(params);
 */
 ```
 
-```
-
 ### parse number value
 
 ```js

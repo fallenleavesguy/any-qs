@@ -14,15 +14,15 @@
    * @return {object}
    */
   function anyQs(url) {
-    let params = {};
-    let tempArr = decodeURI(url)
+    var params = {},
+      tempArr = decodeURI(url)
                     .replace(/\+/g, ' ')
                     .match(/\w+=[^&#?\/]+/g);
     if (!tempArr) {
       return {};
     }
     tempArr.forEach(function (item) {
-      let ps = item.split('=');
+      var ps = item.split('=');
       params[ps[0]] = /^\d+(\.\d+)?$/.test(ps[1]) ? parseFloat(ps[1]) : ps[1];
     });
 

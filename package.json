@@ -1,6 +1,6 @@
 {
   "name": "any-qs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "parse any query parameters from url",
   "main": "index.js",
   "scripts": {

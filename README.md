@@ -3,7 +3,7 @@
 
 # any-qs
 
-parse any query parameters from url
+parse anything look like key=value, different key=value pairs can separate with '&', '#', '?', '\\', ',', or ';'
 
 ## install
 
@@ -11,7 +11,27 @@ parse any query parameters from url
 npm i -S any-qs
 ```
 
-## usage
+## use to parse anything look like key=value
+
+```js
+let rawStr = 'nick=yeluoqiuzhi,email=test@email.com; url=http://github.com';
+    /**
+     * @type {string} string encoded with encodedURI
+     */
+    let encodedStr = 'nick=yeluoqiuzhi,email=test@email.com;%20url=http://github.com';
+anyQs(rawStr);
+anyQs(encodedStr);
+/*
+// two results are the same:
+
+{
+  nick: 'yeluoqiuzhi',
+  email: 'test@email.com',
+  url: 'http://github.com'
+}
+*/
+```
+## use to parse url
 
 ### decodeURI
 

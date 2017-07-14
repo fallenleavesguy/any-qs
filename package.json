@@ -1,10 +1,10 @@
 {
   "name": "any-qs",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "parse any query parameters from url",
   "main": "index.js",
   "scripts": {
-    "prepublish": "npm run dist",
+    "prepublishOnly": "npm run dist",
     "uglify": "uglifyjs --compress --mangle -o dist/any-qs.min.js --source-map dist/any-qs.min.map -- dist/any-qs.js",
     "dist": "npm run clean && cp index.js dist/any-qs.js && npm run uglify",
     "test": "nyc --reporter text --reporter html mocha",
@@ -26,7 +26,9 @@
     "coveralls": "^2.13.1",
     "mocha": "^3.4.1",
     "nyc": "^10.3.2",
-    "rimraf": "^2.6.1",
-    "uglifyjs": "^2.4.11"
+    "rimraf": "^2.6.1"
+  },
+  "dependencies": {
+    "uglify-js": "^3.0.24"
   }
 }

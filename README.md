@@ -66,13 +66,18 @@ console.log(params);
 */
 ```
 
-### parse number value
+### parse number value or not
 
 ```js
 const url = 'http://www.baidu.com?name=yeluoqiuzhi&born=1994&age=@24&height=174.5';
-const params = anyQs(url);
+let params = anyQs(url);
 console.log(typeof params.born); // number
 console.log(typeof params.height) // number
+console.log(params.height) // 174.5
+
+params = anyQs.stringOnly(url);
+console.log(typeof params.born); // string
+console.log(typeof params.height) // string
 console.log(params.height) // 174.5
 ```
 

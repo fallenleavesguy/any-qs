@@ -1,4 +1,5 @@
 const anyQs = require('./index');
+const { stringOnly } = anyQs;
 const expect = require('chai').expect;
 
 describe('any-qs', () => {
@@ -39,7 +40,7 @@ describe('any-qs', () => {
       const url = 'http://www.baidu.com?name=yeluoqiuzhi&born=1994&age=@24&height=174.5';
       const params = anyQs(url);
       expect(typeof params.born).to.equal('number');
-    }); 
+    });
   });
   
   describe('parse anything look like key=value', () => {
@@ -62,6 +63,14 @@ describe('any-qs', () => {
     it('should parse encoded string', () => {
       const params = anyQs(encodedStr);
       expect(params).to.deep.equal(result);
+    });
+  });
+
+  describe('alternative version(stringOnly) that only parse string', () => {
+    it('should convert string to number', () => {
+      const url = 'http://www.baidu.com?name=yeluoqiuzhi&born=1994&age=@24&height=174.5';
+      const params = stringOnly(url);
+      expect(typeof params.born).to.equal('string');
     });
   });
 });

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prepublishOnly": "npm run dist",
-    "uglify": "uglifyjs --compress --mangle -o dist/any-qs.min.js --source-map dist/any-qs.min.map -- dist/any-qs.js",
+    "uglify": "uglifyjs --source-map --compress --mangle -o dist/any-qs.min.js -- dist/any-qs.js",
     "dist": "npm run clean && cp index.js dist/any-qs.js && npm run uglify",
     "test": "nyc --reporter text --reporter html mocha",
     "coverage": "nyc report --reporter=text-lcov | coveralls",

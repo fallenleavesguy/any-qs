@@ -52,7 +52,7 @@ describe('any-qs', () => {
     let result = {
       nick: 'yeluoqiuzhi',
       email: 'test@email.com',
-      url: 'http://github.com'
+      url: 'http:'
     };
 
     it('should parse raw string', () => {
@@ -71,6 +71,15 @@ describe('any-qs', () => {
       const url = 'http://www.baidu.com?name=yeluoqiuzhi&born=1994&age=@24&height=174.5';
       const params = stringOnly(url);
       expect(typeof params.born).to.equal('string');
+    });
+  });
+  describe('do not parse \/', () => {
+    it('should not parse \/', () => {
+      const url = 'http://www.baidu.com?name=yeluoqiuzhi&born=1994&age=@24&height=174.5/';
+      const params = stringOnly(url);
+      expect(params).to.deep.equal({
+        name: 'yeluoqiuzhi', born: '1994', age: '@24', height: '174.5'
+      });
     });
   });
 });

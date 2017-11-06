@@ -67,7 +67,7 @@ describe('any-qs', () => {
   });
 
   describe('alternative version(stringOnly) that only parse string', () => {
-    it('should convert string to number', () => {
+    it('should convert number to string', () => {
       const url = 'http://www.baidu.com?name=yeluoqiuzhi&born=1994&age=@24&height=174.5';
       const params = stringOnly(url);
       expect(typeof params.born).to.equal('string');

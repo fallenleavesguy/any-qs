@@ -27,7 +27,7 @@
     }
 
     var params = {},
-      tempArr = decodeURI(url)
+      tempArr = decodeURIComponent(url)
                     .replace(/\+/g, ' ')
                     .match(/\w+=[^&#?\/,;]+/g);
     if (!tempArr) {

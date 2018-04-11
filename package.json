@@ -8,7 +8,7 @@
     "uglify": "uglifyjs --source-map --compress --mangle -o dist/any-qs.min.js -- dist/any-qs.js",
     "dist": "npm run clean && cp index.js dist/any-qs.js && npm run uglify",
     "test": "jest --coverage",
-    "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls",
+    "coverage": "cat ./coverage/lcov.info | coveralls",
     "clean": "rimraf dist && mkdir dist"
   },
   "repository": {
